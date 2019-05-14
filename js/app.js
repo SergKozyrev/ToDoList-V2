@@ -99,8 +99,6 @@ class List {
             input.focus();
         } else {
             this.saveEditTask(li, input);
-            input.disabled = true;
-            input.classList.remove("todo-list__value--editable");
         };
     };
 
@@ -114,6 +112,8 @@ class List {
             this.undoneTaskArr.splice(index - 1, 1, input.value);
             this.taskToLocal("undoneTask", this.undoneTaskArr);
         }
+        input.disabled = true;
+        input.classList.remove("todo-list__value--editable");
     };
 
     // Task status check
@@ -136,7 +136,6 @@ class List {
         const task = new Task(target.children[0].value);
         this.taskListDone.appendChild(task.createDoneTask());
         target.remove();
-        console.log(index);
     }
 
     // Add "Undone" status for task

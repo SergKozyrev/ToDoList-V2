@@ -183,8 +183,8 @@ function () {
       var task = new Task(target.children[0].value);
       this.taskListDone.appendChild(task.createDoneTask());
       target.remove();
-      console.log(index);
-    } // Add "Undone" status for task
+    } 
+    // Add "Undone" status for task
 
   }, {
     key: "doTaskUndone",
